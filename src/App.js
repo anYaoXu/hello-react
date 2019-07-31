@@ -7,17 +7,19 @@ import Home from './components/Home';
 
 import Calculator from './components/Calculator';
 
-import RHome from './components/RouterComponent/RHome';
+// import RHome from './components/RouterComponent/RHome';
 
-import Product from './components/RouterComponent/Product';
+// import Product from './components/RouterComponent/Product';
 
-import NewsComponent from './components/RouterComponent/NewsComponent';
+// import NewsComponent from './components/RouterComponent/NewsComponent';
 
-import NewDetail from './components/RouterComponent/NewDetail';
+// import NewDetail from './components/RouterComponent/NewDetail';
 
 import ProductDetail from './components/RouterComponent/ProductDetail';
 
 import Login from './components/RouterComponent/Login';
+
+import Routerc from './router';
 
 
 class App extends Component{
@@ -104,11 +106,40 @@ class App extends Component{
                   <Link to="/news">新闻</Link>
                   <Link to="/product">产品</Link>              
                 </div>
-                <Route exact path="/" component={RHome} />
+                {/* <Route exact path="/" component={RHome} />
                 <Route exact path="/news" component={NewsComponent} />
                 <Route path="/product" component={Product} />
                 <Route path="/news/:id" component={NewDetail} />
-                <Route path="/procuctDetail" component={ProductDetail} />
+                <Route path="/procuctDetail" component={ProductDetail} /> */}
+                
+
+                {
+                  Routerc.map((route,key)=>{
+                    if(route.exact){
+                      return (
+                        <Route
+                        key={key}
+                        exact
+                          path={route.path}
+                          render={props => (
+                            <route.component {...props} routes={route.routes} />
+                          )}
+                        />
+                      )
+                    }else{
+                      return (
+                      <Route key={key} path={route.path}
+                        render={props=>(
+                          <route.component {...props} routes={route.routes}/>
+                        )}
+                        />
+                        )
+
+                    }
+                  })
+                }
+
+
               </Router>
           </div>
         </div>

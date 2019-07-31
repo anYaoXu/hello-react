@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import { Link } from "react-router-dom";
-
+import { Route,Link } from "react-router-dom";
+import NewDetail from './NewDetail';
 class NewsComponent extends Component {
     constructor(props) {
         super(props);
@@ -13,9 +13,13 @@ class NewsComponent extends Component {
             {id:4,title:'新闻4444'},
         ]  };
     }
+    componentDidMount(){
+        console.log(this.props);
+    }
     render() {
         return (
             <div>
+                <Route path="/news/:id" component={NewDetail} />
                 <h2>新闻列表</h2>
                 {this.state.list.map((value, key)=>{
                     return (
@@ -24,6 +28,12 @@ class NewsComponent extends Component {
                         </p>
                     )
                 })}
+                {
+                    this.props.routes.map((route,key)=>{
+                        return <Route key={key} exact path={route.path} 
+                        component={route.component} />
+                    })
+                }
             </div>
             
         );

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
+import { Route,Link } from "react-router-dom";
+
+import ProductDetail from './ProductDetail';
 class Product extends Component {
     constructor(props) {
         super(props);
@@ -9,19 +11,36 @@ class Product extends Component {
             {id:3,title:'产品3333'},
             {id:4,title:'产品4444'}
         ]
+        }
     }
+    componentDidMount(){
+        console.log(this.props);
     }
     render() {
         return (
             <div>
-            <h2>产品组件</h2>  
-            {this.state.list.map((value, key)=>{
-                return (
-                    <p key={key}>
-                        <Link to={`/procuctDetail?id=${value.id}`}>{value.title}</Link>
-                    </p>
-                )
-            })}  
+                <Route path="/procuctDetail" component={ProductDetail} />
+                <h2>产品组件</h2>  
+                {
+                    this.state.list.map((value, key)=>{
+                        return (
+                                <p key={key}>
+                                    <Link to={`/procuctDetail?id=${value.id}`}>{value.title}</Link>          
+
+                                </p>
+                                
+                            
+                        )
+                    })
+                }  
+            
+            {/* {
+                this.props.routes.map((route,keys)=>{
+                    return(
+                        <Route key={keys} exact path={route.path} component={route.component}/>
+                    )
+                })            
+            } */}
             </div>        
         );
     }
