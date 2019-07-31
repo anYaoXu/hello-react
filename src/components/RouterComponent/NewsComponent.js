@@ -19,12 +19,11 @@ class NewsComponent extends Component {
     render() {
         return (
             <div>
-                <Route path="/news/:id" component={NewDetail} />
                 <h2>新闻列表</h2>
                 {this.state.list.map((value, key)=>{
                     return (
                         <p key={key}>
-                            <Link to={`/news/${value.id}`}>{value.title}</Link>
+                            <Link to={`/newlist/${value.id}`}>{value.title}</Link>
                         </p>
                     )
                 })}

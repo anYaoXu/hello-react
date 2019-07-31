@@ -30,8 +30,7 @@ class Product extends Component {
                         )
                     })
                 } 
-                <Link to="/product/pa">pa</Link>
-                <Link to="/News/NewsTwo">娱乐新闻</Link>
+                {/* <Link to="/product/pa">pa</Link> */}
                 <div>
                     {
                         this.props.routes.map((route,key)=>{

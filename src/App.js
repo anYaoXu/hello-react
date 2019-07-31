@@ -103,7 +103,7 @@ class App extends Component{
             <Router>
                 <div className="header-roter">
                   <Link to="/">首页</Link>
-                  <Link to="/newslist">新闻列表</Link>
+                  <Link to="/newlist">新闻列表</Link>
                   <Link to="/news">新闻</Link>
                   <Link to="/product">产品</Link>              
                 </div>

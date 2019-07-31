@@ -39,11 +39,11 @@ const Routerc=[
 
     },
     {
-        path:'/newslist',
+        path:'/newlist',
         component:NewsComponent,
         routes:[
             {
-                path:'/newslist/:id',
+                path:'/newlist/:id',
                 component:NewDetail,
                 exact: true,
             }
