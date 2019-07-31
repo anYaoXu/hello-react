@@ -8,6 +8,13 @@ import NewDetail from './components/RouterComponent/NewDetail';
 
 import ProductDetail from './components/RouterComponent/ProductDetail';
 
+import PA from './components/RouterComponent/Pa';
+
+import News from './components/RouterComponent/News';
+import NewsOne from './components/RouterComponent/NewsOne';
+import NewsTwo from './components/RouterComponent/NewsTwo';
+
+
 const Routerc=[
     {
         path:'/',
@@ -17,10 +24,14 @@ const Routerc=[
     {
         path:'/product',
         component:Product,
-        exact: false,
         routes:[
             {
-                path:'/procuctDetail',
+                path:'/product/pa',
+                component:PA,
+                exact: true,
+            },
+            {
+                path:'/product/procuctDetail',
                 component:ProductDetail,
                 exact: true,
             }
@@ -28,18 +39,31 @@ const Routerc=[
 
     },
     {
-        path:'/news',
+        path:'/newslist',
         component:NewsComponent,
-        exact: true,
         routes:[
             {
-                path:'/news/:id',
+                path:'/newslist/:id',
                 component:NewDetail,
                 exact: true,
             }
             
         ]
-    }
+    },
+    {
+        path: "/news",
+        component: News,
+        routes:[   /*嵌套路由*/
+            {
+              path: "/news",
+              component: NewsOne
+            },
+            {
+              path: "/news/newsTwo",
+              component: NewsTwo
+            }
+          ]
+      }
 ]
 
 export default Routerc;

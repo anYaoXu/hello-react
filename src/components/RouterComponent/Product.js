@@ -14,33 +14,32 @@ class Product extends Component {
         }
     }
     componentDidMount(){
-        console.log(this.props);
+        console.log(this.props.routes);
     }
     render() {
         return (
             <div>
-                <Route path="/procuctDetail" component={ProductDetail} />
                 <h2>产品组件</h2>  
                 {
                     this.state.list.map((value, key)=>{
                         return (
                                 <p key={key}>
-                                    <Link to={`/procuctDetail?id=${value.id}`}>{value.title}</Link>          
+                                    <Link to={`/product/procuctDetail?id=${value.id}`}>{value.title}</Link>          
 
                                 </p>
-                                
-                            
                         )
                     })
-                }  
-            
-            {/* {
-                this.props.routes.map((route,keys)=>{
-                    return(
-                        <Route key={keys} exact path={route.path} component={route.component}/>
-                    )
-                })            
-            } */}
+                } 
+                <Link to="/product/pa">pa</Link>
+                <Link to="/News/NewsTwo">娱乐新闻</Link>
+                <div>
+                    {
+                        this.props.routes.map((route,key)=>{
+                            return   <Route key={key} exact path={route.path} component={route.component} />
+                        })
+                    }
+                </div>
+                                        
             </div>        
         );
     }

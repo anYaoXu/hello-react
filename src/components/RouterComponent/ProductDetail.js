@@ -20,7 +20,7 @@ class ProductDetail extends Component {
     render() {
         
         return (
-            <div>产品详情 -- {this.state.id}</div>
+            <div>产品详情 -555- {this.state.id}</div>
         );
     }
 }

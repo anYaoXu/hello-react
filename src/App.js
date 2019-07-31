@@ -15,7 +15,7 @@ import Calculator from './components/Calculator';
 
 // import NewDetail from './components/RouterComponent/NewDetail';
 
-import ProductDetail from './components/RouterComponent/ProductDetail';
+// import ProductDetail from './components/RouterComponent/ProductDetail';
 
 import Login from './components/RouterComponent/Login';
 
@@ -66,7 +66,7 @@ class App extends Component{
             <Login></Login>
         </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-md-12">
             <Header name={this.state.name}/>
           </div>
@@ -90,7 +90,7 @@ class App extends Component{
           <div className="col-md-12">
             <Calculator />
           </div>
-        </div>
+        </div> */}
         
         <div className="row">
         <div className="col-md-12">
@@ -103,6 +103,7 @@ class App extends Component{
             <Router>
                 <div className="header-roter">
                   <Link to="/">首页</Link>
+                  <Link to="/newslist">新闻列表</Link>
                   <Link to="/news">新闻</Link>
                   <Link to="/product">产品</Link>              
                 </div>
