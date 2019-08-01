@@ -13,6 +13,7 @@ class News extends Component {
     render() {
         return (
             <div>
+                <h2>新闻分类组件</h2>
                 <div className="user">
                     <div className="content">
                         <div className="left">

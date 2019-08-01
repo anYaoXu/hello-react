@@ -24,13 +24,12 @@ class Product extends Component {
                     this.state.list.map((value, key)=>{
                         return (
                                 <p key={key}>
-                                    <Link to={`/product/procuctDetail?id=${value.id}`}>{value.title}</Link>          
+                                    <Link to={`/productDetail?id=${value.id}`}>{value.title}</Link>         
 
                                 </p>
                         )
                     })
-                } 
-                {/* <Link to="/product/pa">pa</Link> */}
+                }
                 <div>
                     {
                         this.props.routes.map((route,key)=>{

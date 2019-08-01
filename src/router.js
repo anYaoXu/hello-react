@@ -25,16 +25,11 @@ const Routerc=[
         path:'/product',
         component:Product,
         routes:[
-            {
-                path:'/product/pa',
-                component:PA,
-                exact: true,
-            },
-            {
-                path:'/product/procuctDetail',
-                component:ProductDetail,
-                exact: true,
-            }
+            // {
+            //     path:'/product/procuctDetail',
+            //     component:ProductDetail,
+            //     exact: true,
+            // }
         ]
 
     },
@@ -63,6 +58,11 @@ const Routerc=[
               component: NewsTwo
             }
           ]
+      },
+      {
+          path:'/productDetail',
+          component:ProductDetail,
+          exact: true,
       }
 ]
 

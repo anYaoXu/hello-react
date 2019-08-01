@@ -9,6 +9,9 @@ class NewDetail extends Component {
     componentDidMount(){
         console.log(this.props.match.params);
     }
+    componentDidUpdate(){
+        console.log('更新',this.props.match.params);
+    }
     render() {
         return (
             <div>
